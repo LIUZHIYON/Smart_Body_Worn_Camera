@@ -1,0 +1,20 @@
+﻿{% extends "base.html" %}
+{% block title %}视频管理{% endblock %}
+{% block content %}
+<div class="page-header"><h2>视频管理</h2></div>
+<div class="card" style="margin-bottom:16px;">
+    <h3 style="font-size:14px;margin-bottom:8px;">转码导出</h3>
+    <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">选择视频和格式，转换为 MP4 / AVI / FLV 格式导出</p>
+    <div class="form-row" style="align-items:end;">
+        <div class="form-group" style="flex:2;"><label>视频文件</label><select id="transcodeVideo"></select></div>
+        <div class="form-group" style="flex:1;"><label>目标格式</label><select id="transcodeFormat"><option value="mp4">MP4</option><option value="avi">AVI</option><option value="flv">FLV</option></select></div>
+        <button class="btn btn-primary" onclick="doTranscode()" style="margin-bottom:14px;">转码</button>
+    </div>
+    <div id="transcodeMsg" class="msg hidden"></div>
+</div>
+<table class="data-table" id="videoTable">
+    <thead><tr><th>ID</th><th>文件名</th><th>格式</th><th>时长(s)</th><th>大小</th><th>时间</th><th>操作</th></tr></thead>
+    <tbody></tbody>
+</table>
+<video id="videoPlayer" controls style="width:100%;max-width:720px;margin-top:12px;display:none;"></video>
+{% endblock %}

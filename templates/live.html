@@ -1,0 +1,24 @@
+﻿{% extends "base.html" %}
+{% block title %}实时画面{% endblock %}
+{% block content %}
+<div class="page-header"><h2>实时画面</h2></div>
+<div class="live-container">
+    <div class="video-panel">
+        <img id="liveFeed" src="/video_feed" alt="Live Feed">
+        <div class="no-feed hidden" id="noFeed">摄像头未启动，请点击"开启摄像头"</div>
+    </div>
+    <div class="control-panel">
+        <button class="btn btn-primary" id="btnStartCam" onclick="startCamera()">开启摄像头</button>
+        <button class="btn btn-outline" id="btnStopCam" onclick="stopCamera()" disabled>关闭摄像头</button>
+        <div class="divider"></div>
+        <button class="btn btn-photo" id="btnPhoto" onclick="takePhoto()" disabled>拍照</button>
+        <div class="divider"></div>
+        <button class="btn btn-record" id="btnRecord" onclick="toggleRecording()" disabled>开始录制</button>
+        <div class="divider"></div>
+        <div class="status-bar">
+            <div class="status-item"><span class="status-dot" id="camDot"></span><span id="camStatus">未连接</span></div>
+            <div class="status-item"><span class="status-dot rec-dot hidden" id="recDot"></span><span id="recStatus">未录制</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

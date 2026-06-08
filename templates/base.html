@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能执法记录仪 - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        {% if session.user %}
+        <aside class="sidebar">
+            <div class="sb-brand">执法记录仪</div>
+            <div class="sb-user">{{ session.user }}</div>
+            <nav class="sb-nav">
+                <a href="/live" class="sb-link {{ 'active' if request.path == '/live' }}">实时画面</a>
+                <a href="/photos" class="sb-link {{ 'active' if request.path == '/photos' }}">照片查看</a>
+                <a href="/videos" class="sb-link {{ 'active' if request.path == '/videos' }}">视频管理</a>
+                <a href="/logs" class="sb-link {{ 'active' if request.path == '/logs' }}">系统日志</a>
+                <a href="/api/logout" class="sb-link sb-logout">退出登录</a>
+            </nav>
+        </aside>
+        {% endif %}
+        <main class="main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

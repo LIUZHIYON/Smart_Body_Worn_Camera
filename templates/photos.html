@@ -1,0 +1,9 @@
+﻿{% extends "base.html" %}
+{% block title %}照片查看{% endblock %}
+{% block content %}
+<div class="page-header"><h2>照片查看</h2></div>
+<div class="photo-grid" id="photoGrid"></div>
+<div class="lightbox hidden" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="">
+</div>
+{% endblock %}
