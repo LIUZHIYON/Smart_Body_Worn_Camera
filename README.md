@@ -14,11 +14,15 @@ python app.py
 
 浏览器打开 `http://127.0.0.1:5002/login`，默认账号 `admin` / `admin123`。
 
+![登录界面](login-interface.png)
+
 **可选依赖**：FFmpeg（用于视频录制和转码，需在系统 PATH 中）。拍照和实时预览不依赖 FFmpeg。
 
 ---
 
 ## 功能
+
+![主界面](main-interface.png)
 
 | 功能 | 说明 |
 |------|------|
